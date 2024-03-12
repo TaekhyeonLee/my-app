@@ -1,5 +1,17 @@
-import "@/styles/globals.css";
+import React from 'react';
+import { ConfigProvider } from 'antd';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+
+const App = ({ Component, pageProps }) => (
+  <ConfigProvider 
+  theme={{
+    hashed: false,
+    token: {
+      fontFamily: 'Spoqa Han Sans',
+    },
+  }}>
+    <Component {...pageProps} />
+  </ConfigProvider>
+);
+
+export default App;
